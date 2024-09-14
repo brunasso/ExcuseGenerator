@@ -14,10 +14,10 @@ window.onload = function() {
 
 
   function generateExcuse() {
-      let Who = WordsWho[Math.floor(Math.random() * who.length)];
-      let Action = WordsAction[Math.floor(Math.random() * action.length)];
-      let What = WordsWhat[Math.floor(Math.random() * what.length)];
-      let When = WordsWhen[Math.floor(Math.random() * when.length)];
+      let Who = WordsWho[Math.floor(Math.random() * WordsWho.length)];
+      let Action = WordsAction[Math.floor(Math.random() * WordsAction.length)];
+      let What = WordsWhat[Math.floor(Math.random() * WordsWhat.length)];
+      let When = WordsWhen[Math.floor(Math.random() * WordsWhen.length)];
       
       return `${Who} ${Action} ${What} ${When}`;
   }
