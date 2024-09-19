@@ -7,10 +7,10 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  let WordsWho = ["The dog", "My grandma", "The mailman", "My bird"];
-  let WordsAction = ["ate", "peed", "crushed", "broke"];
-  let WordsWhat = ["my homework", "my phone", "the car"];
-  let WordsWhen = [
+  let Who = ["The dog", "My grandma", "The mailman", "My bird"];
+  let Action = ["ate", "peed", "crushed", "broke"];
+  let What = ["my homework", "my phone", "the car"];
+  let When = [
     "before the class",
     "when I was sleeping",
     "while I was exercising",
@@ -18,14 +18,12 @@ window.onload = function() {
     "while I was praying"
   ];
 
-  function generateExcuse() {
-    let Who = WordsWho[Math.floor(Math.random() * WordsWho.length)];
-    let Action = WordsAction[Math.floor(Math.random() * WordsAction.length)];
-    let What = WordsWhat[Math.floor(Math.random() * WordsWhat.length)];
-    let When = WordsWhen[Math.floor(Math.random() * WordsWhen.length)];
+  const generateExcuse = excuseGenerate => {
+    return Math.floor(Math.random() * excuseGenerate.length);
+  };
+  let ExcuseGenerated = `${Who[generateExcuse(Who)]} ${
+    Action[generateExcuse(Action)]
+  } ${What[generateExcuse(What)]} ${When[generateExcuse(When)]}`;
 
-    return `${Who} ${Action} ${What} ${When}`;
-  }
-
-  document.getElementById("Excuse").innerHTML = generateExcuse();
+  document.getElementById("Excuse").innerHTML = ExcuseGenerated;
 };
